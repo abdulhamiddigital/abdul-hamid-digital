@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,15 +12,15 @@
         theme: {
           extend: {
             colors: {
-              navy: '#0F172A',  // Latar utama / Teks judul
-              teal: '#0D9488',  // Tombol utama & Aksen
-              emas: '#D4A017',  // Sorotan & Label Pre-Order
-              kabut: '#F8FAFC', // Latar belakang utama
-              slate: '#64748B', // Teks pendukung
-              kartu: '#F1F5F9', // Warna latar kartu/box
+              navy: '#0F172A',
+              teal: '#0D9488',
+              emas: '#D4A017',
+              kabut: '#F8FAFC',
+              slate: '#64748B',
             },
             fontFamily: {
-              judul: ['Playfair Display', 'Poppins', 'serif'],
+              judul: ['Playfair Display', 'serif'],
+              sansjudul: ['Poppins', 'sans-serif'],
               isi: ['Inter', 'sans-serif'],
             }
           }
@@ -33,215 +33,170 @@
     
     <style>
       body { font-family: 'Inter', sans-serif; }
-      h1, h2, h3, .font-judul { font-family: 'Playfair Display', serif; }
+      h1, h2, .font-judul { font-family: 'Playfair Display', serif; }
+      h3, .font-sans-judul { font-family: 'Poppins', sans-serif; }
     </style>
 </head>
-<body class="bg-kabut text-navy min-h-screen flex flex-col justify-between p-4 md:p-8">
+<body class="bg-kabut text-navy min-h-screen flex flex-col relative">
 
-    <!-- Container Utama Bergaya Kartu Melayang (Sesuai Desain Reference) -->
-    <div class="max-w-6xl mx-auto w-full bg-white rounded-3xl shadow-sm border border-slate/10 overflow-hidden">
-        
-        <!-- Header / Navigasi Navbar -->
-        <header class="px-6 py-5 border-b border-slate/10 flex flex-wrap justify-between items-center gap-4">
+    <!-- Header / Navigasi Navbar -->
+    <header class="bg-white sticky top-0 z-40 border-b border-slate/10 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <!-- Logo & Brand -->
             <a href="#" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-teal/10 border border-teal/20 flex items-center justify-center text-teal font-bold text-lg">
-                    AH
-                </div>
                 <div>
-                    <span class="block font-judul text-xl font-bold leading-none text-navy">Abdul Hamid</span>
+                    <span class="block font-sans-judul text-xl font-bold leading-none text-navy tracking-tight">ABDUL HAMID</span>
                     <span class="text-[10px] tracking-widest uppercase text-teal font-semibold">DIGITAL</span>
                 </div>
             </a>
 
-            <!-- Menu Navigasi -->
-            <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate">
-                <a href="#overview" class="text-teal font-semibold border-b-2 border-teal pb-1">Overview</a>
-                <a href="#artikel" class="hover:text-navy transition">Articles</a>
-                <a href="#desain" class="hover:text-navy transition">Graphic Design Portfolio</a>
-                <a href="#toko" class="hover:text-navy transition">T-shirt Shop</a>
-                <a href="#aktivitas" class="hover:text-navy transition">Teaching Activities</a>
-                <a href="#media" class="hover:text-navy transition">Learning Media</a>
-                <a href="#preorder" class="hover:text-navy transition">Pre-order</a>
-                <a href="#cv" class="hover:text-navy transition">CV</a>
+            <!-- Menu Navigasi Desktop -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate">
+                <a href="#karya" class="hover:text-teal transition">Karya</a>
+                <a href="#toko" class="hover:text-teal transition">Toko</a>
+                <a href="#profil" class="hover:text-teal transition">Profil</a>
+                <a href="#layanan" class="hover:text-teal transition">Layanan</a>
             </nav>
 
-            <!-- Tombol Aksi WhatsApp -->
+            <!-- Tombol Aksi Konsultasi -->
             <a href="https://wa.me/6285856009515?text=Halo%20Abdul%20Hamid%20Digital%2C%20saya%20ingin%20konsultasi" 
                target="_blank" 
-               class="bg-teal hover:bg-teal/90 text-white font-medium text-xs md:text-sm px-5 py-2.5 rounded-full shadow-sm transition flex items-center gap-2">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Konsultasi via WhatsApp
+               class="bg-navy hover:bg-slate text-white font-medium text-xs md:text-sm px-5 py-2.5 rounded-full shadow-sm transition">
+                Konsultasi
             </a>
-        </header>
+        </div>
+    </header>
 
-        <!-- Hero Banner Section -->
-        <section class="p-6 md:p-8">
-            <div class="bg-kartu rounded-2xl p-6 md:p-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-center border border-slate/10">
-                <!-- Teks Pengenalan Utama -->
-                <div class="md:col-span-2">
-                    <h1 class="text-3xl md:text-5xl font-bold text-navy leading-tight mb-4">
-                        Halo, saya Abdul Hamid — <br>Kreator & Pengajar
-                    </h1>
-                    <p class="text-slate text-sm md:text-base mb-6 leading-relaxed">
-                        Design • Writing • Teaching • Sharing knowledge for creative learners across Indonesia.
-                    </p>
-                    <div class="flex flex-wrap gap-3">
-                        <a href="#desain" class="bg-teal hover:bg-teal/90 text-white font-medium text-sm px-6 py-3 rounded-xl shadow-sm transition">
-                            Lihat Portofolio
-                        </a>
-                        <a href="/unduhan/cv-abdul-hamid.pdf" target="_blank" class="bg-white hover:bg-slate/5 text-navy border border-slate/30 font-medium text-sm px-6 py-3 rounded-xl transition flex items-center gap-2">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                            Download CV
-                        </a>
-                    </div>
+    <main class="flex-grow">
+        
+        <!-- Hero Section -->
+        <section class="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center flex flex-col items-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-navy leading-tight mb-6">
+                Karya, Ilmu, dan Desain dalam Satu Tempat.
+            </h1>
+            <p class="text-slate text-lg md:text-xl mb-10 max-w-2xl">
+                Artikel ilmiah, desain grafis, produk konveksi, dan media pembelajaran, siap dipesan.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 mb-16">
+                <a href="#karya" class="bg-teal hover:bg-teal/90 text-white font-semibold text-sm md:text-base px-8 py-3.5 rounded-full shadow-md transition">
+                    Lihat Karya
+                </a>
+                <a href="#toko" class="bg-white hover:bg-slate/5 text-navy border border-slate/20 font-semibold text-sm md:text-base px-8 py-3.5 rounded-full shadow-sm transition">
+                    Pesan Sekarang
+                </a>
+            </div>
+
+            <!-- Kartu Statistik -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 w-full border-t border-b border-slate/10 py-10">
+                <div>
+                    <h3 class="text-4xl font-bold text-teal mb-1">128</h3>
+                    <p class="text-sm font-medium text-slate">Artikel</p>
                 </div>
-
-                <!-- Kartu Profil Samping -->
-                <div class="bg-white p-6 rounded-xl border border-slate/10 shadow-sm text-center">
-                    <div class="w-20 h-20 mx-auto mb-3 rounded-full bg-teal/10 border-2 border-teal/20 text-teal font-bold text-2xl flex items-center justify-center">
-                        AH
-                    </div>
-                    <div class="flex items-center justify-center gap-1 text-slate text-xs mb-1">
-                        <svg class="w-3.5 h-3.5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                        <span>Jember, Indonesia</span>
-                    </div>
-                    <p class="text-xs font-semibold text-navy">Kreator • Desainer • Pengajar</p>
+                <div>
+                    <h3 class="text-4xl font-bold text-emas mb-1">54</h3>
+                    <p class="text-sm font-medium text-slate">Desain</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-navy mb-1">36</h3>
+                    <p class="text-sm font-medium text-slate">Produk</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-teal mb-1">21</h3>
+                    <p class="text-sm font-medium text-slate">Media</p>
                 </div>
             </div>
         </section>
 
-        <!-- Grid Cards Section (Overview) -->
-        <section id="overview" class="px-6 pb-8">
-            <h2 class="text-2xl font-bold text-navy mb-6">Overview</h2>
+        <!-- Akses Cepat -->
+        <section class="max-w-6xl mx-auto px-6 py-8 text-center">
+            <h2 class="text-xs font-bold tracking-widest uppercase text-slate mb-6">Akses Cepat</h2>
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="#karya" class="bg-white border border-slate/20 px-5 py-2 rounded-full text-sm font-medium hover:border-teal hover:text-teal transition">Artikel Ilmiah</a>
+                <a href="#karya" class="bg-white border border-slate/20 px-5 py-2 rounded-full text-sm font-medium hover:border-teal hover:text-teal transition">Galeri Desain</a>
+                <a href="#toko" class="bg-white border border-slate/20 px-5 py-2 rounded-full text-sm font-medium hover:border-teal hover:text-teal transition">Toko T-Shirt</a>
+                <a href="#toko" class="bg-white border border-slate/20 px-5 py-2 rounded-full text-sm font-medium hover:border-teal hover:text-teal transition">Media Belajar</a>
+                <a href="#toko" class="bg-white border border-slate/20 px-5 py-2 rounded-full text-sm font-medium text-emas hover:border-emas transition">Pre-Order</a>
+            </div>
+        </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Produk & Karya Terbaru -->
+        <section id="karya" class="max-w-6xl mx-auto px-6 py-16">
+            <div class="flex justify-between items-end mb-10 border-b border-slate/10 pb-4">
+                <h2 class="text-2xl md:text-3xl font-bold text-navy">Produk & Karya Terbaru</h2>
+                <a href="#semua" class="text-teal font-medium text-sm hover:underline">Lihat semua &rarr;</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <!-- 1. Kartu Artikel Terbaru -->
-                <div class="bg-kartu/60 hover:bg-kartu border border-slate/10 p-6 rounded-2xl transition">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 rounded-full bg-teal/10 text-teal flex items-center justify-center font-bold text-lg">
-                            📄
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-navy text-lg">Artikel Terbaru</h3>
-                            <p class="text-xs font-semibold text-teal">128 Artikel Ilmiah</p>
-                        </div>
+                <!-- 1. Toko T-Shirt -->
+                <div class="bg-white p-5 rounded-2xl border border-slate/10 shadow-sm hover:shadow-md transition flex flex-col h-full">
+                    <div class="w-full h-40 bg-kabut rounded-xl mb-5 flex items-center justify-center text-4xl">👕</div>
+                    <h3 class="font-bold text-lg text-navy mb-1">T-Shirt Edisi Dakwah</h3>
+                    <p class="text-slate text-xs mb-6">Katalog Toko</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="font-bold text-teal">Rp 95.000</span>
+                        <a href="https://wa.me/6285856009515?text=Halo%20saya%20ingin%20memesan%20T-Shirt%20Edisi%20Dakwah" target="_blank" class="bg-navy hover:bg-slate text-white text-xs font-semibold px-4 py-2 rounded-lg transition">Pesan</a>
                     </div>
-                    <p class="text-xs text-slate mb-4 leading-relaxed">
-                        Tulisan tentang desain grafis, proses kreatif, dan pembelajaran visual terbaru: <span class="text-navy font-medium">"Prinsip Tipografi untuk Pemula"</span> • 2 hari lalu
-                    </p>
-                    <a href="#artikel" class="text-xs font-bold text-teal hover:underline flex items-center gap-1">
-                        Lihat semua →
-                    </a>
                 </div>
 
-                <!-- 2. Kartu Portofolio Desain Grafis -->
-                <div class="bg-kartu/60 hover:bg-kartu border border-slate/10 p-6 rounded-2xl transition">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 rounded-full bg-teal/10 text-teal flex items-center justify-center font-bold text-lg">
-                            🎨
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-navy text-lg">Portofolio Desain Grafis</h3>
-                            <p class="text-xs font-semibold text-teal">54 Karya / Proyek</p>
-                        </div>
+                <!-- 2. Media Pembelajaran -->
+                <div class="bg-white p-5 rounded-2xl border border-slate/10 shadow-sm hover:shadow-md transition flex flex-col h-full">
+                    <div class="w-full h-40 bg-kabut rounded-xl mb-5 flex items-center justify-center text-4xl">📚</div>
+                    <h3 class="font-bold text-lg text-navy mb-1">Modul Ajar Digital</h3>
+                    <p class="text-slate text-xs mb-6">Media Belajar (PDF)</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="font-bold text-teal">Rp 45.000</span>
+                        <a href="https://wa.me/6285856009515?text=Halo%20saya%20ingin%20memesan%20Modul%20Ajar%20Digital" target="_blank" class="bg-navy hover:bg-slate text-white text-xs font-semibold px-4 py-2 rounded-lg transition">Pesan</a>
                     </div>
-                    <p class="text-xs text-slate mb-4 leading-relaxed">
-                        Branding, Vector Art, Jersey, Spanduk, dan Mockup Pakaian terbaru: <span class="text-navy font-medium">Poster Festival Loka Seni 2026</span>
-                    </p>
-                    <a href="#desain" class="text-xs font-bold text-teal hover:underline flex items-center gap-1">
-                        Lihat portofolio →
-                    </a>
                 </div>
 
-                <!-- 3. Kartu T-shirt Shop -->
-                <div class="bg-kartu/60 hover:bg-kartu border border-slate/10 p-6 rounded-2xl transition">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 rounded-full bg-emas/10 text-emas flex items-center justify-center font-bold text-lg">
-                            👕
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-navy text-lg">T-shirt Shop</h3>
-                            <p class="text-xs font-semibold text-emas">36 Produk Katalog</p>
-                        </div>
+                <!-- 3. Desain Grafis -->
+                <div class="bg-white p-5 rounded-2xl border border-slate/10 shadow-sm hover:shadow-md transition flex flex-col h-full">
+                    <div class="w-full h-40 bg-kabut rounded-xl mb-5 flex items-center justify-center text-4xl">🎨</div>
+                    <h3 class="font-bold text-lg text-navy mb-1">Desain Kemasan</h3>
+                    <p class="text-slate text-xs mb-6">Galeri Desain</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="font-bold text-teal text-sm">Mulai Rp 150.000</span>
+                        <a href="https://wa.me/6285856009515?text=Halo%20saya%20butuh%20jasa%20Desain%20Kemasan" target="_blank" class="bg-navy hover:bg-slate text-white text-xs font-semibold px-4 py-2 rounded-lg transition">Pesan</a>
                     </div>
-                    <div class="text-xs text-slate mb-3 space-y-1">
-                        <p>• Kaos "Batik Geometrik" - <span class="font-semibold text-navy">Rp 149.000</span></p>
-                        <p>• Kaos "Ruang Baca" - <span class="font-semibold text-navy">Rp 139.000</span></p>
-                    </div>
-                    <span class="inline-block bg-emas/10 text-emas border border-emas/20 font-semibold text-[10px] px-3 py-1 rounded-full mb-3">
-                        Pre-order hingga 30 Nov 2026
-                    </span>
                 </div>
 
-                <!-- 4. Kartu Kegiatan Mengajar -->
-                <div class="bg-kartu/60 hover:bg-kartu border border-slate/10 p-6 rounded-2xl transition">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 rounded-full bg-teal/10 text-teal flex items-center justify-center font-bold text-lg">
-                            🎓
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-navy text-lg">Kegiatan Mengajar</h3>
-                            <p class="text-xs font-semibold text-teal">Kelas & Media Pembelajaran</p>
-                        </div>
+                <!-- 4. Artikel Ilmiah -->
+                <div class="bg-white p-5 rounded-2xl border border-slate/10 shadow-sm hover:shadow-md transition flex flex-col h-full">
+                    <div class="w-full h-40 bg-kabut rounded-xl mb-5 flex items-center justify-center text-4xl">📄</div>
+                    <h3 class="font-bold text-lg text-navy mb-1">Jurnal: Pendidikan</h3>
+                    <p class="text-slate text-xs mb-6">Artikel Ilmiah</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="font-bold text-emas">Akses Terbuka</span>
+                        <a href="#artikel" class="bg-white border border-slate/20 text-navy hover:bg-slate/5 text-xs font-semibold px-4 py-2 rounded-lg transition">Akses</a>
                     </div>
-                    <p class="text-xs text-slate mb-4 leading-relaxed">
-                        Kelas: Desain Visual & Informatika untuk Pemula. Pengajaran aktif dan jadwal materi terstruktur.
-                    </p>
-                    <a href="#aktivitas" class="text-xs font-bold text-teal hover:underline flex items-center gap-1">
-                        Lihat jadwal →
-                    </a>
-                </div>
-
-                <!-- 5. Kartu Media Pembelajaran -->
-                <div class="bg-kartu/60 hover:bg-kartu border border-slate/10 p-6 rounded-2xl transition">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 rounded-full bg-teal/10 text-teal flex items-center justify-center font-bold text-lg">
-                            📚
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-navy text-lg">Media Pembelajaran</h3>
-                            <p class="text-xs font-semibold text-teal">21 Modul Gratis & Digital</p>
-                        </div>
-                    </div>
-                    <p class="text-xs text-slate mb-4 leading-relaxed">
-                        Modul PDF: Tipografi Dasar • Worksheet Desain Grid • 124 unduhan
-                    </p>
-                    <a href="#media" class="text-xs font-bold text-teal hover:underline flex items-center gap-1">
-                        Unduh materi →
-                    </a>
-                </div>
-
-                <!-- 6. Kartu Pre-order Zine / Modul -->
-                <div class="bg-kartu/60 hover:bg-kartu border border-slate/10 p-6 rounded-2xl transition">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 rounded-full bg-emas/10 text-emas flex items-center justify-center font-bold text-lg">
-                            📦
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-navy text-lg">Pre-order Zine / Cetak</h3>
-                            <p class="text-xs font-semibold text-emas">Zine "Loka Seni" Vol.1</p>
-                        </div>
-                    </div>
-                    <p class="text-xs text-slate mb-4 leading-relaxed">
-                        Cetak terbatas, tema: seni & budaya lokal terbit Nov 2026, 87 sudah pre-order.
-                    </p>
-                    <a href="https://wa.me/6285856009515?text=Halo%20saya%20ingin%20Pre-Order%20Zine%20Loka%20Seni" target="_blank" class="text-xs font-bold text-emas hover:underline flex items-center gap-1">
-                        Pre-order sekarang →
-                    </a>
                 </div>
 
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="bg-navy text-slate text-xs py-6 px-6 border-t border-slate/10 text-center">
-            <p class="mb-1 text-white">© 2026 ABDUL HAMID DIGITAL • Kreator Indonesia</p>
-            <p>Dibuat untuk berbagi ilmu & karya • Terhubung via WhatsApp: <a href="https://wa.me/6285856009515" class="text-teal hover:underline">085856009515</a></p>
-        </footer>
+    </main>
 
-    </div>
+    <!-- Tombol WhatsApp Float (Mengambang) -->
+    <a href="https://wa.me/6285856009515?text=Halo%20Abdul%20Hamid%20Digital%2C%20saya%20ingin%20bertanya" 
+       target="_blank" 
+       class="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#1EBE5D] text-white p-4 rounded-full shadow-xl transition-transform hover:scale-110 z-50 flex items-center justify-center"
+       aria-label="Chat WhatsApp">
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+    </a>
+
+    <!-- Footer Minimalis -->
+    <footer class="bg-white border-t border-slate/10 py-10 mt-10">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            <div>
+                <h4 class="font-sans-judul font-bold text-navy text-lg">ABDUL HAMID DIGITAL</h4>
+                <p class="text-slate text-sm mt-1">Karya, Ilmu, dan Desain dalam Satu Tempat.</p>
+            </div>
+            <div class="text-slate text-sm">
+                © 2026 Abdul Hamid. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
