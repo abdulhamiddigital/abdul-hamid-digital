@@ -1,0 +1,8 @@
+[
+{"id":1,"nama":"Media Pembelajaran Bahasa Indonesia Kelas VIII - BAB 2","kategori":"Media HTML","format":"HTML","harga":25000,"deskripsi":"Aplikasi satu file HTML tentang iklan, slogan, dan poster. Buka langsung di browser, tanpa instalasi.","status":"ready","unggulan":true},
+{"id":2,"nama":"Media Pembelajaran Informatika Kelas 7 - BAB 2","kategori":"Media HTML","format":"HTML","harga":25000,"deskripsi":"Media interaktif Informatika kurikulum terbaru, satu file HTML.","status":"ready","unggulan":true},
+{"id":3,"nama":"Media Berpikir Komputasional - BAB 2","kategori":"Media HTML","format":"HTML","harga":25000,"deskripsi":"Struktur data, logika, dan algoritma dalam satu aplikasi HTML.","status":"ready","unggulan":true},
+{"id":4,"nama":"Contoh E-Book Panduan Mengajar","kategori":"E-Book","format":"PDF","harga":35000,"deskripsi":"Ganti dengan e-book Anda. Edit data/products.json.","status":"preorder","unggulan":false},
+{"id":5,"nama":"Contoh Template Nilai Siswa","kategori":"Template Excel","format":"XLSX","harga":15000,"deskripsi":"Ganti dengan template Excel Anda: rekap nilai, absensi, dan lainnya.","status":"ready","unggulan":false},
+{"id":6,"nama":"Contoh Kaos Desain Sendiri","kategori":"Kaos","format":"KAOS","harga":95000,"deskripsi":"Kaos sablon desain ABDUL HAMID DIGITAL. Tulis ukuran dan warna saat memesan.","status":"preorder","unggulan":false}
+]

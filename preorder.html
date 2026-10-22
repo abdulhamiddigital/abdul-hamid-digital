@@ -1,0 +1,11 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pre-Order - ABDUL HAMID DIGITAL</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css"></head><body>
+<main><section><div class="wrap"><h1>Pre-Order</h1><p>Pesan produk yang belum ready, media pembelajaran sesuai kebutuhan, atau desain grafis. Data Anda dikirim lewat WhatsApp, bukan disimpan di situs.</p>
+<div class="form"><label for="n">Nama</label><input id="n"><label for="p">Pesanan</label><select id="p"><option>Desain grafis (custom)</option><option>Media pembelajaran (custom)</option></select>
+<label for="j">Jumlah</label><input id="j" type="number" min="1" value="1"><label for="c">Detail (ukuran kaos, mapel, kelas, deadline)</label><textarea id="c" rows="4"></textarea>
+<p><button class="btn wa" id="kirim">Kirim lewat WhatsApp</button></p></div></div></section></main>
+<script src="assets/js/app.js"></script>
+<script>loadProducts().then(a=>a.forEach(x=>p.add(new Option(x.nama,x.nama))));
+kirim.onclick=()=>{if(!n.value.trim()){n.focus();return}open(wa(`Halo, saya ${n.value} ingin pre-order.\nPesanan: ${p.value}\nJumlah: ${j.value}\nDetail: ${c.value||"-"}`),"_blank")}</script></body></html>

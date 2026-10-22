@@ -1,0 +1,10 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Toko - ABDUL HAMID DIGITAL</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css"></head><body>
+<main><section><div class="wrap"><h1>Toko</h1>
+<div class="tools"><input id="q" type="search" placeholder="Cari produk" aria-label="Cari produk"><select id="k" aria-label="Kategori"><option value="">Semua kategori</option></select></div>
+<div class="grid" id="list"></div></div></section></main>
+<script src="assets/js/app.js"></script>
+<script>let all=[];const draw=()=>{const t=q.value.toLowerCase(),c=k.value;const r=all.filter(p=>(!c||p.kategori===c)&&(p.nama+p.deskripsi).toLowerCase().includes(t));list.innerHTML=r.map(card).join("")||"<p>Produk tidak ditemukan.</p>"};
+loadProducts().then(a=>{all=a;[...new Set(a.map(p=>p.kategori))].forEach(x=>k.add(new Option(x,x)));draw()});q.oninput=k.onchange=draw</script></body></html>

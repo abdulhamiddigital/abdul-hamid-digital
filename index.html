@@ -1,0 +1,19 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ABDUL HAMID DIGITAL - Media Belajar, E-Book, Template, dan Kaos</title>
+<meta name="description" content="Toko digital ABDUL HAMID DIGITAL: media pembelajaran HTML, e-book, template Excel, desain grafis, dan kaos.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css"></head><body>
+<main><div class="hero"><div class="wrap"><div>
+<h1>Media belajar, desain, dan kaos buatan sendiri.</h1>
+<p>File HTML interaktif, e-book, template Excel, dan kaos. Pilih produk, pesan lewat WhatsApp, terima file setelah pembayaran.</p>
+<div class="cta"><a class="btn gold" href="toko.html">Lihat toko</a><a class="btn ghost" href="preorder.html">Pesan khusus</a></div></div>
+<div class="tiles" aria-hidden="true"><div class="tile">.html</div><div class="tile">.pdf</div><div class="tile">.xlsx</div><div class="tile">kaos</div></div></div></div>
+<section><div class="wrap"><h2>Produk unggulan</h2><div class="grid" id="featured"></div></div></section>
+<section><div class="wrap"><h2>Cara memesan</h2><ol class="steps">
+<li>Pilih produk di halaman Toko, lalu klik tombol WhatsApp.</li>
+<li>Kirim pesan yang sudah terisi otomatis dan konfirmasi pembayaran.</li>
+<li>File dikirim lewat WhatsApp, email, atau tautan unduhan. Kaos dikirim ke alamat Anda.</li></ol></div></section>
+<section><div class="wrap"><div class="note"><b>Butuh konsultasi?</b> Tanyakan desain, media pembelajaran, atau pesanan khusus lewat WhatsApp, email, atau sosial media.</div></div></section></main>
+<script src="assets/js/app.js"></script>
+<script>loadProducts().then(a=>featured.innerHTML=a.filter(p=>p.unggulan).map(card).join("")||"<p>Produk segera hadir.</p>")</script></body></html>
